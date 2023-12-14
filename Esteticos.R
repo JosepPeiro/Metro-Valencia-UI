@@ -11,3 +11,15 @@ htmltextinput = "
            "
 
 backgroundDerecha = "background-color: #f9f9f9; border-radius: 15px; padding: 15px; margin-rigth: 15px;"
+
+intro_json <- '
+      $("#estacion").on("keydown", function(e) {
+        if (e.key === "Enter") {
+          var valor = $(this).val().trim();
+          if (valor !== "") {
+            Shiny.setInputValue("input_enter", valor);
+            $(this).val("");  // Limpiar el cuadro de texto
+          }
+        }
+      });
+    '

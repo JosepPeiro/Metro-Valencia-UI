@@ -28,19 +28,20 @@ line_prct <- function(aciertos){
   return(line_prct) 
 }
 
-# ### Ejemplo
-# N_TOTAL_ESTACIONES <- 147
-# 
-# id_aciertos <- data.frame(id = c(13, 18, 47, 59))
-# aciertos <- id_aciertos %>%
-#   left_join(estaciones, by = "id")
-# 
-# # Obtenemos los resultados
-# p_t <- tot_prct(aciertos)
-# p_l <- line_prct(aciertos)
-# 
-# # Imprimimos el resultado
-# cat("Porcentaje respuestas sobre el total",p_t,"%","\n")
-# 
-# p_l
+N_TOTAL_ESTACIONES <- nrow(estaciones)
+### Ejemplo
+N_TOTAL_ESTACIONES <- 147
+
+id_aciertos <- data.frame(id = c(13, 18, 47, 59))
+aciertos <- id_aciertos %>%
+  left_join(estaciones, by = "id")
+
+# Obtenemos los resultados
+p_t <- tot_prct(aciertos)
+p_l <- line_prct(aciertos)
+
+# Imprimimos el resultado
+cat("Porcentaje respuestas sobre el total",p_t,"%","\n")
+
+p_l
 
